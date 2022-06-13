@@ -11,7 +11,11 @@ input.onButtonPressed(Button.AB, function () {
     dy = 0
     Head_x = 0
     Head_y = 0
+    egg_x = 4
+    egg_y = 4
     score = 0
+    BodyList_x = [Head_x]
+    BodyList_y = [Head_y]
     Delay = 1000
 })
 input.onButtonPressed(Button.B, function () {
@@ -40,10 +44,12 @@ function move () {
     Head_x += dx
     Head_y += dy
 }
+let Delay = 0
+let BodyList_y: number[] = []
+let BodyList_x: number[] = []
+let score = 0
 let egg_y = 0
 let egg_x = 0
-let Delay = 0
-let score = 0
 let Head_y = 0
 let Head_x = 0
 let dy = 0
@@ -52,8 +58,6 @@ let 方向 = 0
 let run = false
 run = false
 basic.forever(function () {
-    let BodyList_y: number[] = []
-    let BodyList_x: number[] = []
     if (run) {
         basic.clearScreen()
         move()
